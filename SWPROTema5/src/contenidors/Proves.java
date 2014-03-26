@@ -73,7 +73,7 @@ public class Proves {
 		Preferencia hashSet = new Preferencia(1, "Paella");
 		//Crea un altre objecte Preferencia amb les mateixes dades. L'ha inserit? 
 		//És el que esperàvem? Per què? Explica-ho amb un println.
-		
+		Preferencia hashSet2 = new Preferencia(1, "Paella");
 		
 		
 	}
