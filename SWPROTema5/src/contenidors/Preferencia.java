@@ -3,11 +3,14 @@ package contenidors;
 public class Preferencia implements Comparable<Preferencia> {
 	int ordre;
 	String plat;
+	//s'afegeix l'atribut preu
+	double preu;
 
-	public Preferencia(int ordre, String plat) {
+	public Preferencia(int ordre, String plat, int preu) {
 		super();
 		this.ordre = ordre;
 		this.plat = plat;
+		this.preu = preu;
 	}
 
 	public int getOrdre() {
@@ -26,22 +29,36 @@ public class Preferencia implements Comparable<Preferencia> {
 		this.plat = plat;
 	}
 
+
+	public double getPreu() {
+		return preu;
+	}
+
+
+	public void setPreu(double preu) {
+		this.preu = preu;
+	}
+
+
+	public Preferencia(int ordre, String plat, double preu) {
+		super();
+		this.ordre = ordre;
+		this.plat = plat;
+		this.preu = preu;
+	}
+
 	@Override
 	public String toString() {
-		return "Preferencia [ordre=" + ordre + ", plat=" + plat + "]";
+		return "Preferencia [ordre=" + ordre + ", plat=" + plat + ", preu="
+				+ preu + "]";
 	}
 
-	public int compareTo(Preferencia a) {
-		if (this.ordre < a.ordre) {
+	@Override
+	public int compareTo(Preferencia o) {
+		if (this.ordre>o.ordre){
 			return 1;
-		} else {
-			return 0;
 		}
-
-		
+		return 0;
 	}
-
-
 	
-
 }

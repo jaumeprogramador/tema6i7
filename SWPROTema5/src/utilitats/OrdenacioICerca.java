@@ -52,47 +52,68 @@ public class OrdenacioICerca {
 			quickSort(vector, i, dreta);
 		}
 	}
-	
-	public int cercarBinaria(int[] a, int cercat) {
-		int inici = 0;
-		int fi = a.length - 1;
-		int mig = -1;
-		while (inici <= fi) {
-			mig = (inici + fi) / 2;
-			if (cercat == a[mig]) {
-				return mig;
-			} else if (a[mig] > cercat) {
-				fi = mig - 1;
-			} else {
-				inici = mig + 1;
-			}
-		}
-		return -1;
-	}
-	
-	public int cercarBinaria2(int[] a, int cercat) {
-		int inici = 0;
-		int comptador = 0;
-		int fi = a.length - 1;
-		int mig = -1;
-		while (inici <= fi) {
-			comptador++;
-			mig = (inici + fi) / 2;
-			if (cercat == a[mig]) {
-				comptador++;
-				return mig;
-			} else if (a[mig] > cercat) {
-				comptador++;
-				fi = mig - 1;
-			} else {
-				comptador++;
-				inici = mig + 1;
-			}
-		}
-		System.out.println("comptador: " + comptador);
-		return -1;
-	}
-	
-	
 
+	public int CercaBinaria(int[] array, int num) {
+		int inici = 0, fi = array.length - 1, mig = -1;
+		while (inici <= fi) {
+
+			mig = (inici + fi) / 2;
+			if (num == array[mig]) {
+
+				return mig;
+			} else if (array[mig] > num) {
+				fi = mig - 1;
+
+			} else {
+				inici = mig + 1;
+			}
+
+		}
+
+		return -1;
+	}
+
+	public String CercaBinaria2(int[] array, int num) {
+		int inici = 0, fi = array.length - 1, mig = -1, contador = 0;
+		while (inici <= fi) {
+			String missatge;
+			mig = (inici + fi) / 2;
+			if (num == array[mig]) {
+				contador++;
+				return missatge = mig + " botes " + contador;
+			} else if (array[mig] > num) {
+				fi = mig - 1;
+				contador++;
+			} else {
+				inici = mig + 1;
+				contador++;
+			}
+
+		}
+
+		return "-1";
+	}
+
+	// A la classe OrdenacioICerca sobrecarrega el mètode bimbolla de forma que
+	// accepti com a paràmetre un array d'objectes Comparable.
+
+	 public void bimbolla(Comparable[] desordenat) {
+		 temps.start();
+		    boolean ordenat = false;  
+		    while (!ordenat) {
+		      ordenat = true;
+		      for (int i = 0; i < desordenat.length - 1; i++) {
+		        if (desordenat[i].compareTo(desordenat[i + 1]) > 0 ){
+		          Comparable temp = desordenat[i + 1];
+		          desordenat[i + 1] = desordenat[i];
+		          desordenat[i] = temp;
+		          ordenat = false;
+		        }
+		      }
+		    } 
+		    temps.stop();
+			System.out.println("El temps requerit és " + temps.temps()
+					+ " milisegons.");
+		  } 
+	 
 }

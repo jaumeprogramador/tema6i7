@@ -73,8 +73,8 @@ public class Proves {
 	public void provesHashSet() {
 		// Crea una preferència amb els valors 1, “Paella”. Afegeix-lo al
 		// conjunt.
-		Preferencia paella = new Preferencia(1, "Paella");
-		Preferencia paella2 = new Preferencia(1, "Paella");
+		Preferencia paella = new Preferencia(1, "Paella", 15);
+		Preferencia paella2 = new Preferencia(1, "Paella", 15);
 		// cream un hash set
 		HashSet preferencia = new HashSet();
 		preferencia.add(paella);
@@ -87,7 +87,7 @@ public class Proves {
 						+ " de memòria que ocupa és diferent a l'altre malgrat siguin idèntics.");
 		System.out.println("Mostra: " + preferencia);
 		// Crea un altre objecte Preferencia amb valors diferents i afegeix-lo.
-		Preferencia tortilla = new Preferencia(2, "Omelette");
+		Preferencia tortilla = new Preferencia(2, "Omelette", 10);
 		preferencia.add(tortilla);
 		// Mostra per pantalla tot el conjunt.
 		System.out.println("Mostra: " + preferencia);
@@ -170,7 +170,6 @@ public class Proves {
 
 		//Mostra per pantalla tot el mapa.
 		System.out.println("************MAPA***********\n" + preferencia);
-		//
 		
 		//Mostra per pantalla el nombre d'elements del mapa.
 		System.out.println("Nombre d'elements: " + preferencia.size());
