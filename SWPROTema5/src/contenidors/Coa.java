@@ -43,11 +43,11 @@ public class Coa <I>{
 	 * 
 	 * @return
 	 */
-	public int element() {
-		int temp = coa.getInfo();
-		return temp;
+	//public int element() {
+		//int temp = coa.getInfo();
+		//return temp;
 
-	}
+	//}
 
 	/**
 	 * borra el elemento de la parte superior pero no lo borra
@@ -65,14 +65,14 @@ public class Coa <I>{
 	 * 
 	 * @return
 	 */
-	public int poll() {
+	//public int poll() {
 
 		// getInfo muestra el valor
-		int temp = coa.getInfo();
+		//int temp = coa.getInfo();
 		// referencia indica la siguiente posicion
 
-		coa = coa.getReferencia();
-		return temp;
-	}
+		//coa = coa.getReferencia();
+		//return temp;
+	//}
 
 }

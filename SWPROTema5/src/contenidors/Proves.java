@@ -1,6 +1,7 @@
 package contenidors;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.HashMap;
 
@@ -182,6 +183,26 @@ public class Proves {
 		System.out.println("Es buit? " + preferencia.isEmpty());
 		
 	}
+	
+	public void provesComparator(){
+		ArrayList <Preferencia> platos = new ArrayList <Preferencia>();		
+		Preferencia braciola = new Preferencia(4, "Braciola", 10);
+		Preferencia tortilla = new Preferencia(2, "Tortilla", 5);
+		Preferencia arrosBrut = new Preferencia(1, "Arròs Brut", 12);
+		Preferencia filetMignon = new Preferencia(3, "Filet Mignon", 15);
+		platos.add(braciola);
+		platos.add(tortilla);
+		platos.add(arrosBrut);
+		platos.add(filetMignon);
+		
+		for (Preferencia d: platos){
+			System.out.println(d);
+		}
+		
+		Compara ordenar = new Compara();
+		System.out.println(ordenar.compare(arrosBrut, filetMignon));
+		
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -216,6 +237,8 @@ public class Proves {
 		p.provesHashSet2();
 		//Executar mapa
 		p.provesHashMap();
+		
+		p.provesComparator();
 
 	}
 
